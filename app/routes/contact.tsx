@@ -15,6 +15,8 @@ export default function Contact() {
           <Link
             key={index}
             to={href}
+            aria-label={label}
+            title={label}
             target={href.startsWith('http') ? '_blank' : '_self'}
             rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
             className={`${type === 'email' ? 'bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-4 rounded-full text-lg font-semibold hover:scale-105 transition-all ease-in-out duration-300' : 'bg-gradient-to-r from-blue-500 to-indigo-800 px-8 py-4 rounded-full text-lg font-semibold hover:scale-105 transition-all ease-in-out duration-300'}`}
@@ -28,6 +30,8 @@ export default function Contact() {
           <Link
             key={label}
             to={href}
+            aria-label={label}
+            title={label}
             target={href.startsWith('http') ? '_blank' : '_self'}
             rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
             className='flex items-center gap-2 hover:text-teal-400 transition-all ease-in-out duration-500'

@@ -35,6 +35,8 @@ export default function Home() {
             target={href.startsWith('http') ? '_blank' : '_self'}
             rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
             className='link-button'
+            aria-label={label}
+            title={label}
           >
             <Icon size={24} />
           </Link>
