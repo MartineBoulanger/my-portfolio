@@ -1,20 +1,16 @@
-# Welcome to React Router!
+# Martine Boulanger's Portfolio
 
-A modern, production-ready template for building full-stack React applications using React Router.
+On my portfolio you can find the project I have been working on, my personal projects,
+some information about me as a person, and developer, and of course also my resume.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+You will be able to download my resume in Dutch and English,
+the download buttons are in the header.
 
-## Features
+My portfolio is being built with React-Router, and Vite.
+All data is for now hardcoded in the files.
+This might be changing soon though, I plan on building a backend solution with C# and .NET.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
+## Getting Started with developing
 
 ### Installation
 
