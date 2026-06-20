@@ -1,108 +1,21 @@
-import { Download } from 'lucide-react';
 import { Title } from '~/components/Title';
 import { Section } from '~/components/Section';
 import { Paragraph } from '~/components/Paragraph';
-import type { Route } from './+types/resume';
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: 'My resume' },
-    {
-      name: 'description',
-      content:
-        'This is my personal portfolio, so I can show businesses and people about what I have done',
-    },
-  ];
-}
+import {
+  sections,
+  experiences,
+  educations,
+  skills,
+  languages,
+  hobbies,
+} from '~/lib/resume';
 
 export default function Resume() {
-  const experiences = [
-    {
-      role: 'Front-end Developer',
-      company: 'Vaimo Benelux, Genk, Belgium',
-      period: 'May 2021 - June 2025',
-      details: [
-        'Developed and maintained e-commerce websites using Magento, PWA-Studio, Next.js, and Nuxt.js',
-        'Collaborated with cross-functional teams to deliver high-quality solutions',
-        'Optimized website performance and ensured responsiveness across devices',
-        'Implemented SEO best practices to improve search engine rankings',
-        'Integrated third-party services and APIs to enhance website functionality',
-        'Implementing GTM and GA integrations as third-party contact person',
-        'Bug fixing, issue resolution, and testing implementations with Jest',
-        'Ensuring excellent folder architecture, composable components, performance, and accessibility',
-        'Contributing innovative solutions for client requirements',
-      ],
-    },
-  ];
-
-  const educations = [
-    {
-      name: 'Front-End Developer',
-      institution: 'CVO de Verdieping, Heusden-Zolder, Belgium',
-      period: '2020-2021',
-    },
-    {
-      name: 'HBO5 Graduaat Informatica',
-      institution: 'PCVO Limburg, Hasselt, Belgium',
-      period: '2017-2019',
-    },
-  ];
-
-  const skills = [
-    { name: 'HTML & CSS', level: 100 },
-    { name: 'JavaScript', level: 100 },
-    { name: 'TypeScript', level: 80 },
-    { name: 'React.js & Next.js', level: 90 },
-    { name: 'Vue.js & Nuxt.js', level: 75 },
-    { name: 'Contentful CMS', level: 85 },
-    { name: 'Algolia', level: 50 },
-    { name: 'Cloudinary', level: 40 },
-    { name: 'Git', level: 90 },
-    { name: 'PHP, Laravel', level: 20 },
-    { name: 'MySQL', level: 40 },
-    { name: 'MongoDB, Supabase, etc', level: 50 },
-    { name: 'Drupal', level: 20 },
-    { name: 'Python', level: 5 },
-  ];
-
-  const languages = [
-    { name: 'Dutch', level: '(C2) Expert', native: true },
-    { name: 'English', level: '(C1) Autonomous', native: false },
-    { name: 'French', level: '(A1) Debutant', native: false },
-  ];
-
-  const hobbies = [
-    'Gaming',
-    'Writing',
-    'Reading',
-    'Painting & Drawing',
-    'Diamond Painting',
-    'Embroidery',
-    'Music',
-    'Films & Series',
-    'History',
-    'Traveling',
-    'Hiking',
-    'Animals & Nature',
-  ];
-
   return (
     <>
-      {/* Download CV Button */}
-      <div className='fixed top-20 right-4 md:right-6 z-50'>
-        <a
-          href='/MartineBoulangerCV.pdf'
-          download
-          className='inline-flex items-center px-2 md:px-6 py-2 md:py-3 bg-gradient-to-r from-sky-400 to-teal-400 text-white font-semibold rounded-lg shadow-lg hover:from-sky-500 hover:to-teal-500 hover:scale-105 transition-all duration-300'
-        >
-          <Download size={18} />
-          <span className='hidden md:block md:ml-2'>{'Download my CV'}</span>
-        </a>
-      </div>
-
       {/* Experience Section */}
       <Section>
-        <Title className='mb-6 text-center'>{'Work Experiences'}</Title>
+        <Title className='mb-6 text-center'>{sections.workTitle}</Title>
         <div className='space-y-6'>
           {experiences.map((exp, index) => (
             <div
@@ -132,7 +45,7 @@ export default function Resume() {
           as='h2'
           className='text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent pb-4 mb-6 text-center'
         >
-          {'Educations'}
+          {sections.educationTitle}
         </Title>
         <div className='space-y-6'>
           {educations.map((edu, index) => (
@@ -158,7 +71,7 @@ export default function Resume() {
           as='h2'
           className='text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent pb-4 mb-6 text-center'
         >
-          {'Technical Skills'}
+          {sections.skillsTitle}
         </Title>
         <div className='grid md:grid-cols-2 gap-4 md:gap-8 bg-slate-950 rounded-2xl p-4 md:p-8 border border-cyan-500/50 shadow-lg shadow-cyan-300/40 md:text-xl leading-normal'>
           {skills.map((skill, index) => (
@@ -191,7 +104,7 @@ export default function Resume() {
           as='h2'
           className='text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent pb-4 mb-6 text-center'
         >
-          {'Languages'}
+          {sections.languagesTitle}
         </Title>
         <div className='flex flex-wrap items-center justify-center gap-6'>
           {languages.map((lang, index) => (
@@ -219,7 +132,7 @@ export default function Resume() {
           as='h2'
           className='text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-sky-400 to-teal-400 bg-clip-text text-transparent pb-4 mb-6 text-center'
         >
-          {'Hobbies & Interests'}
+          {sections.hobbiesTitle}
         </Title>
         <div className='flex flex-wrap items-center justify-center gap-6'>
           {hobbies.map((hobby, index) => (

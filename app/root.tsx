@@ -2,7 +2,6 @@ import {
   isRouteErrorResponse,
   Links,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
 } from 'react-router';
@@ -12,6 +11,12 @@ import Header from '~/components/Header';
 import Footer from '~/components/Footer';
 import { Title } from '~/components/Title';
 import { Paragraph } from '~/components/Paragraph';
+import Home from '~/routes/home';
+import About from '~/routes/about';
+import Professional from '~/routes/professional';
+import Personal from '~/routes/personal';
+import Resume from '~/routes/resume';
+import Contact from '~/routes/contact';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -36,7 +41,12 @@ export default function App() {
     <>
       <Header />
       <main className='min-h-screen'>
-        <Outlet />
+        <Home />
+        <About />
+        <Professional />
+        <Personal />
+        <Resume />
+        <Contact />
       </main>
       <Footer />
     </>

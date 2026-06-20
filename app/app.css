@@ -6,10 +6,28 @@
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 body {
-  @apply bg-gradient-to-br from-black to-indigo-800 text-gray-100 font-sans;
+  @apply bg-gradient-to-br from-black to-indigo-800 text-gray-100 font-sans scroll-smooth;
 }
 
 /* custom global classes */
 .link-button {
   @apply bg-sky-500/20 rounded-full hover:bg-blue-500/40 transition-all p-3 hover:scale-110;
+}
+
+/* scrollbar styling */
+/* width */
+::-webkit-scrollbar {
+  @apply w-1.5 h-1.5 rounded-r-full;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-indigo-800 w-0.5 rounded-r-full;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-cyan-400 w-[1px] rounded-r-full;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyan-400/60;
 }
