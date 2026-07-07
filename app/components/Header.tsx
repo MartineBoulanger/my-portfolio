@@ -18,7 +18,7 @@ export default function Header() {
         {/* Download CV Button */}
         <div className='flex gap-2.5 md:gap-5'>
           <a
-            href='/Martine Boulanger-CV.pdf'
+            href='/CV - Martine Boulanger.pdf'
             download
             aria-label='Dutch CV'
             title='Dutch CV'
@@ -28,7 +28,7 @@ export default function Header() {
             <span className='ml-2'>{'Dutch CV'}</span>
           </a>
           <a
-            href='/Martine Boulanger-CV-English.pdf'
+            href='/CV - English - Martine Boulanger.pdf'
             download
             aria-label='English CV'
             title='English CV'
